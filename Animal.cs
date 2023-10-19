@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Labb6__OOP_Arv
 {
-    internal class Animal
+    public abstract class Animal
     {
         //Egenskaper hos Djuret
         private string _Name { get; set; }
@@ -15,11 +15,8 @@ namespace Labb6__OOP_Arv
         private string _Color { get; set; }
         private double _Weight { get; set; }
         private string _FaveFood { get; set; }
+        private DateTime _Foodtime { get; set;}
 
-        public Animal()
-        {
-
-        }
         public Animal(string name, int age, string color, double weight, string food)
         {
             _Name = name;
@@ -28,18 +25,21 @@ namespace Labb6__OOP_Arv
             _Weight = weight;
             _FaveFood = food;
         }
-        public virtual void AnimalInfo()
+        public void AnimalInfo()
         {
-            Console.WriteLine($"\nName: {_Name} \nAge: {_Age} \nColor: {_Color} \nWeight in Kilograms: {_Weight} \nFavorite food: {_FaveFood}");
+            Console.WriteLine("Here is a list of the animals you can expect to see at our zoo and where to find them"); 
+            Console.WriteLine($"\nName: {_Name}\nAge: {_Age} \nColor: {_Color} \nWeight in Kilograms: {_Weight}Kg \nFavorite food: {_FaveFood}");
         }
 
-        public void makeSound()
+        public virtual void makeSound()
         {
-
+            Console.WriteLine("The animal makes a sound");
         }
-        public void feeding()
+        public void feedingTime(int year, int month, int day,int hour, int minute)
         {
-
+           
+            _Foodtime = new DateTime(year,month, day,hour,minute,0);
+            Console.WriteLine($"{_Name} is scheduled to be fed at {_Foodtime:yyyy-MM-dd HH:mm}"); //Included :yyyy-MM-dd HH:mm to not print the seconds 
         }
     }
 
