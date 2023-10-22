@@ -50,7 +50,7 @@
             while (!validInput)
             {
 
-                Console.WriteLine("\nPlease choose number of exhibition you would like to go to:");
+                Console.WriteLine("\nPlease choose the number of exhibition you would like to go to:");
                 Console.WriteLine("1. Safari Park");
                 Console.WriteLine("2. Marine Life Exhibit");
                 Console.WriteLine("3. Big Cat Enclosure");
