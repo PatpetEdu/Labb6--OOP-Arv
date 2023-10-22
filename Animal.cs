@@ -10,25 +10,33 @@ namespace Labb6__OOP_Arv
     public abstract class Animal
     {
         //Egenskaper hos Djuret
-        private string _Name { get; set; }
+        protected string _Name { get; set; }
         private int _Age { get; set; }
         private string _Color { get; set; }
         private double _Weight { get; set; }
         private string _FaveFood { get; set; }
+        private string _AnimalType { get; set; }
         private DateTime _Foodtime { get; set;}
+        private string _Exhibition { get; set; }
 
-        public Animal(string name, int age, string color, double weight, string food)
+        public Animal(string name, int age, string color, double weight, string food, string animalType,string exhibition)
         {
+            //defaultvärden för mina egenskaper
             _Name = name;
             _Age = age;
             _Color = color;
             _Weight = weight;
             _FaveFood = food;
+            _AnimalType = animalType;
+            _Exhibition = exhibition;
         }
         public void AnimalInfo()
         {
-            Console.WriteLine("Here is a list of the animals you can expect to see at our zoo and where to find them"); 
-            Console.WriteLine($"\nName: {_Name}\nAge: {_Age} \nColor: {_Color} \nWeight in Kilograms: {_Weight}Kg \nFavorite food: {_FaveFood}");
+            Console.WriteLine($"\nAnimal type: {_AnimalType} \nName: {_Name} \nAge: {_Age} \nColor: {_Color} \nWeight: {_Weight} Kg \nFavorite food: {_FaveFood}");
+        }
+        public void whereTofind()
+        {
+            Console.WriteLine($"{_Name} can be found in the {_Exhibition} exhibition.");  
         }
 
         public virtual void makeSound()

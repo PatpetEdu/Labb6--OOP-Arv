@@ -9,34 +9,35 @@ using System.Xml.Linq;
 namespace Labb6__OOP_Arv
 {
     public class Tiger : Animal
-
     {
-        public Tiger(string name, int age, string color, double weight, string food) : base(name, age, color, weight, food)
+        public double _BitForce;
+        public Tiger(string name, string animalType, string exhibition, int age, string color, double weight, string food, int biteForce) : base(name, age, color, weight, food, animalType, exhibition)
         {
-        }     
+            _BitForce = biteForce;
+        }
         public override void makeSound()
         {
-            Console.WriteLine("The tiger makes a roaring sound");
+            Console.WriteLine($"{_Name} makes a roaring sound");
+        }
+        public virtual void BiteForce()
+        {
+          Console.WriteLine($"A tiger has a bitforce of {_BitForce} Psi");
         }
     }
     public class BengalTiger : Tiger 
     {
-        public double BitForce;
-        public BengalTiger(string name, int age, string color, double weight, string food, int biteForce) : base(name, age, color, weight, food)
+        public double _Stripes;
+        public BengalTiger(string name,string animalType,string exhibition, int age, string color, double weight, string food, int biteForce,int stripes) : base(name,animalType,exhibition, age, color, weight, food,biteForce)
         {
-            BitForce = biteForce;
-
+            _Stripes = stripes;
         }
-        public void BiteForce()
+        public override void BiteForce()
         {
-            Console.WriteLine($"A bengal tiger has a bitforce of {BitForce} Psi");
+            Console.WriteLine($"A bengal tiger has a bitforce of {_BitForce} Psi");
         }
-
-
-    //}
-    //public class SiberianTiger : Tiger
-    // public string 
-    //{
-
+        public override void makeSound()
+        {
+            Console.WriteLine($"{_Name} makes a fierce roar!");
+        }
     }
 }

@@ -9,12 +9,18 @@ namespace Labb6__OOP_Arv
 {
     internal class Elephant : Animal
     {
-        public Elephant(string name, int age, string color, double weight, string food) : base(name, age, color, weight,food)
-        {    
+        public double _tuskSize;
+        public Elephant(string name,string animalType, string exhibition, int age, string color, double weight, string food, double tuskSize) : base(name, age, color, weight,food,animalType,exhibition)
+        {
+            _tuskSize = tuskSize;       
         }
         public override void makeSound()
         {
-            Console.WriteLine("The elephant lets out a loud trumpet sound");
+            Console.WriteLine($"{_Name} lets out a loud trumpet sound");
+        }
+        public void tuskLenght()
+        {
+           Console.WriteLine($"Tusks: The elephants tusks are {_tuskSize} CM in lenght");
         }
     }
 }
