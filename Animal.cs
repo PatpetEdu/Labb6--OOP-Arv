@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Labb6__OOP_Arv
 {
-    public abstract class Animal
+    public abstract class Animal //animal klassen är satt till abstract.tvingar att vi behöver skapa en ny klass för nya djur
     {
         //Egenskaper hos Djuret
         protected string _Name { get; set; }
@@ -19,7 +19,7 @@ namespace Labb6__OOP_Arv
         private DateTime _Foodtime { get; set;}
         private string _Exhibition { get; set; }
 
-        public Animal(string name, int age, string color, double weight, string food, string animalType,string exhibition)
+        public Animal(string name, int age, string color, double weight, string food, string animalType,string exhibition)//konstruktor för att kunna skapa djur med olika egenskaper
         {
             //defaultvärden för mina egenskaper
             _Name = name;
@@ -30,7 +30,7 @@ namespace Labb6__OOP_Arv
             _AnimalType = animalType;
             _Exhibition = exhibition;
         }
-        public void AnimalInfo()
+        public void AnimalInfo() //metod för att skriva ut info om alla djur
         {
             Console.WriteLine($"\nAnimal type: {_AnimalType} \nName: {_Name} \nAge: {_Age} \nColor: {_Color} \nWeight: {_Weight} Kg \nFavorite food: {_FaveFood}");
         }
@@ -44,11 +44,10 @@ namespace Labb6__OOP_Arv
             Console.WriteLine("The animal makes a sound");
         }
         public void feedingTime(int year, int month, int day,int hour, int minute)
-        {
-           
+        {          
             _Foodtime = new DateTime(year,month, day,hour,minute,0);
             Console.WriteLine($"{_Name} is scheduled to be fed at {_Foodtime:yyyy-MM-dd HH:mm}"); //Included :yyyy-MM-dd HH:mm to not print the seconds 
-        }
+        }       
     }
 
 }

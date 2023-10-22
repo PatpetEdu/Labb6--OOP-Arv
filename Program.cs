@@ -6,7 +6,7 @@
         { 
             ZooInfo zoo = new ZooInfo();
             zoo.ShowTimeInfo(2023,8,9,9,00,17,00);
-            Console.WriteLine("Here is a list of the animals you can expect to see at our zoo and where to find them");
+            Console.WriteLine("Here is a some details of the animals you can expect to see at our zoo and where to find them");
 
             Elephant elephant = new Elephant("Dumbo","Elephant", "Safari Park", 13, "Grey", 3500, " Bananas",15);
             elephant.AnimalInfo();
@@ -45,12 +45,41 @@
             bengalTiger.BiteForce();
             bengalTiger.makeSound();
             bengalTiger.feedingTime(2023, 10, 19, 9, 30);
-            
 
+            bool validInput = false;
+            while (!validInput)
+            {
 
-            //Krav om att kunna ska ett nytt djur med hjälp av konstruktor
-            //Animal MyNewAnimal = new Animal("",0,"",0,"","");
-            //MyNewAnimal.AnimalInfo();
+                Console.WriteLine("\nPlease choose number of exhibition you would like to go to:");
+                Console.WriteLine("1. Safari Park");
+                Console.WriteLine("2. Marine Life Exhibit");
+                Console.WriteLine("3. Big Cat Enclosure");
+                string userInput = Console.ReadLine();
+                int userChoice;
+                if (int.TryParse(userInput, out userChoice))
+                {
+                    switch (userChoice)
+                    {
+                        case 1:
+                            elephant.elephantExhibitionAct();
+                            validInput = true;
+                            break;
+                        case 2:
+                            shark.sharkExhibitionAct();
+                            validInput = true;
+                            break;
+                        case 3:
+                            tiger.tigerExhibitionAct();
+                            validInput = true;
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number");
+                    
+                }
+            }
         }
     }
 }
