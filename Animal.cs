@@ -47,7 +47,8 @@ namespace Labb6__OOP_Arv
         {          
             _Foodtime = new DateTime(year,month, day,hour,minute,0);
             Console.WriteLine($"{_Name} is scheduled to be fed at {_Foodtime:yyyy-MM-dd HH:mm}"); //Included :yyyy-MM-dd HH:mm to not print the seconds 
-        }       
+        }
+        public abstract void ExhibitionAct();//abstract metod för att skapa metoder för olika exhibitions
     }
 
 }

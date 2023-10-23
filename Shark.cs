@@ -21,8 +21,8 @@ namespace Labb6__OOP_Arv
         public virtual void finType()
         {
             Console.WriteLine("characteristic traits: Sharks have dirrent types of fins but the most prominent one is the Dorsal Fin. \nA (general) shark typically has a tall, triangular dorsal fin on its back. This dorsal fin aids in stability and steering while swimming. It is one of the most recognizable features of a shark's silhouette.");
-        }
-        public void sharkExhibitionAct() //Metod som körs vid val av userinput i vårat switch case
+        }   
+        public override void ExhibitionAct() //metod som körs vid val av userinput i vårat swtich case
         {
             Console.WriteLine($"A the Marine Life Exhibit you see the shark {_Name} chasing after a big fish, wondering if he will actually catch it.");
             Random random = new Random();
@@ -33,7 +33,7 @@ namespace Labb6__OOP_Arv
             }
             else
             {
-                Console.WriteLine($"Unforunatly for {_Name} he swims away empty-handed, the big fish manged to escape.");
+                Console.WriteLine($"Unforunatly for {_Name} he swims away empty-handed, the big fish managed to escape.");
             }
         }
     }

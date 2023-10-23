@@ -61,15 +61,15 @@
                     switch (userChoice)
                     {
                         case 1:
-                            elephant.elephantExhibitionAct();
+                            elephant.ExhibitionAct();
                             validInput = true;
                             break;
                         case 2:
-                            shark.sharkExhibitionAct();
+                            shark.ExhibitionAct();
                             validInput = true;
                             break;
                         case 3:
-                            tiger.tigerExhibitionAct();
+                            tiger.ExhibitionAct();
                             validInput = true;
                             break;
                     }

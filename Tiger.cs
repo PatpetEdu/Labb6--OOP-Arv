@@ -23,7 +23,8 @@ namespace Labb6__OOP_Arv
         {
           Console.WriteLine($"A tiger has a bitforce of {_BitForce} Psi");
         }
-        public void tigerExhibitionAct() //Metod som körs vid val av userinput i vårat switch case
+
+        public override void ExhibitionAct()
         {
             Console.WriteLine($"You found your way to the Big Cat Enclosure too get a look of {_Name} but unforutnatly he is very shy today and are hiding somwhere");
         }

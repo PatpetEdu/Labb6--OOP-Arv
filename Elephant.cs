@@ -22,7 +22,7 @@ namespace Labb6__OOP_Arv
         {
             Console.WriteLine($"Tusks: The elephants tusks are {_tuskSize} CM in lenght");
         }
-        public void elephantExhibitionAct() //Metod som körs vid val av userinput i vårat switch case
+        public override void ExhibitionAct()
         {
             Console.WriteLine($"You have arrived at the Safari Park to see the mighty elephant {_Name}, and lucky that you arrived right on feeding time");
         }
